@@ -70,6 +70,22 @@ select * from orders;
 
 select * from products;
 
+SELECT
+    c.customer_id,
+    c.name AS customer_name,
+    c.city,
+    o.order_id,
+    o.order_date,
+    p.product_name,
+    p.category,
+    o.amount
+FROM customers c
+JOIN orders o
+    ON c.customer_id = o.customer_id
+JOIN products p
+    ON o.product_id = p.product_id
+ORDER BY o.order_id;
+
 
     
 
